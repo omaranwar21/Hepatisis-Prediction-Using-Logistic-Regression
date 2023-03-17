@@ -1,1 +1,1 @@
-# Hepatisis-Using-Logistic-Regression
+# Hepatisis-Prediction-Using-Logistic-Regression
