@@ -29,20 +29,33 @@ def thirdPage():
         X_predict.reshape(1, -1)
         #st.write(X_predict.reshape(1, -1))
         loaded_model = pkle.load(open(
-            r"C:\Partitiion\3rd Year\2nd Term\CDSS\Github Projects\Hepatisis-Prediction-Using-Logistic-Regression\Hepatisis_prediction_model",
+            r"..\Hepatisis_prediction_model",
             'rb'))
         x = loaded_model.predict(X_predict.reshape(1, -1))
         prediction = x[0]
-        if x[0] == 0 or x[0] == 2 or x[0] == 3:
+        if x[0] == 0:
             prediction = 'Normal'
-        elif x[0] == 1:
+        else:
             prediction = 'Hepatitis'
         st.header(prediction)
+
     return 'Finish'
 
 def firstPage():
+    
+    with content_left:
+        st.title('Hepatisis Prediction')
     with content_middle:
-        st.title('Welcome to our website')
+        st.header("Data Information")
+        st.text("The target attribute for classification is Category \n(blood donors vs. Hepatitis C (including its progress ('just' Hepatitis C,\n Fibrosis, and Cirrhosis).")
+        st.markdown('+ **Hepatitis C** is a liver infection caused by the hepatitis C virus (HCV).')
+        st.markdown('+ **Liver fibrosis** is the outcome of the wound healing response to tissue damage caused by chronic HCV infection.')
+        st.markdown('+ **Cirrhosis:** The hepatitis C virus slowly damages the liver over many years, often progressing from inflammation to permanent, irreversible scarring.')
+        st.header("Model & Evaluation")
+        st.markdown("The data is imbalanced, so the model is evaluated using the **confusion matric** ")
+    with content_right:
+        st.image('confusion_matrix.png')
+
 
 def secondPage():
     with content_left:
@@ -89,7 +102,6 @@ with content_left:
         if st.session_state.next_clicked == len(pages):
             st.session_state.next_clicked = 0
         choice = st.radio("",('Start','Page2', 'Page3'), index=st.session_state.next_clicked , horizontal=True , disabled=True)
-        #pkle.dump(pages.index(choice), open('next.p', 'wb'))
         title = 'Get Started'
         if choice == 'Start':
             firstPage()
@@ -100,7 +112,7 @@ with content_left:
         elif choice == 'Page3':
             title = thirdPage()
 
-with content_middle:
+with content_left:
     if title == '':
         pass
     else:
