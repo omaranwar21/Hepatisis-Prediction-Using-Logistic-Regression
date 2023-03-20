@@ -7,22 +7,22 @@ import os.path
 st.set_page_config(layout="wide", page_icon='💡', page_title="C Prediction")
 content_left, space1, content_middle, space2, content_right = st.columns([1, 0.3, 1.5, 0.3, 1])
 
-if 'next_clicked' not in st.session_state or 'User_Data' not in st.session_state:
+if 'next_clicked' not in st.session_state or 'User_Data' not in st.session_state or 'User_Name' not in st.session_state:
     st.session_state.next_clicked = 0
     st.session_state.User_Data = []
+    st.session_state.User_Name = ''
 
 with open("style.css")as f:
     st.markdown(f"<style>{f.read() }</style>", unsafe_allow_html=True)
 pages = ['Start','Page2','Page3']
-# if os.path.isfile('next.p'):
-#     next_clicked = pkle.load(open('next.p', 'rb'))
-#     if next_clicked == len(pages):
-#         next_clicked = 0
-# else:
-#     next_clicked = 0
 
 def thirdPage():
     with content_middle:
+        st.header("")
+        st.header("")
+        st.header("")
+        st.header("")
+        st.header("")
         st.title('The Result')
 
         X_predict = np.array(st.session_state.User_Data)
@@ -34,9 +34,10 @@ def thirdPage():
         x = loaded_model.predict(X_predict.reshape(1, -1))
         prediction = x[0]
         if x[0] == 0:
-            prediction = 'Normal'
+            prediction = 'Fortunately, You are in good health and do not suffer from any infections in the liver'
         else:
-            prediction = 'Hepatitis'
+            prediction = 'Unfortunately, you suffer from Hepatisis, see a doctor as soon as possible'
+        st.header("Welcome "+ st.session_state.User_Name)
         st.header(prediction)
 
     return 'Finish'
@@ -45,30 +46,41 @@ def firstPage():
     
     with content_left:
         st.title('Hepatisis Prediction')
-    with content_middle:
         st.header("Data Information")
         st.text("The target attribute for classification is Category \n(blood donors vs. Hepatitis C (including its progress ('just' Hepatitis C,\n Fibrosis, and Cirrhosis).")
         st.markdown('+ **Hepatitis C** is a liver infection caused by the hepatitis C virus (HCV).')
         st.markdown('+ **Liver fibrosis** is the outcome of the wound healing response to tissue damage caused by chronic HCV infection.')
         st.markdown('+ **Cirrhosis:** The hepatitis C virus slowly damages the liver over many years, often progressing from inflammation to permanent, irreversible scarring.')
+        st.markdown("### Model Precision 50%")
+        st.markdown("### Model Accuracy 88.62%")
+        st.markdown("### Model Sensitivity 85.7%")
+    with content_middle:
         st.header("Model & Evaluation")
-        st.markdown("The data is imbalanced, so the model is evaluated using the **confusion matric** ")
-    with content_right:
+        st.markdown("The data is imbalanced, so the model is evaluated using the **confusion matrix** ")
         st.image('confusion_matrix.png')
+        st.markdown("# Precision \n### Of the positives predicted, what percentage is truly positive \n### Precision does not evaluate the correctly predicted negative cases")
+    with content_right:
+        st.markdown("# Accuracy \n### Accuracy measures how often the model is correct.")
+        st.markdown("# Sensitivity (Recall) \n### Of all the positive cases, what percentage are predicted positive \n### Sensitivity (sometimes called Recall) measures how good the model is at predicting positives. \n### This means it looks at true positives and false negatives (which are positives that have been incorrectly predicted as negative).\n### Sensitivity is good at understanding how well the model predicts something is positive")
 
 
 def secondPage():
     with content_left:
+
+        st.header("")
+        st.header("")
+        st.title('Hepatisis Prediction')
+        st.write("")
         st.write("Please enter the following data:")
-        User_Name = st.text_input("Name")
+        st.session_state.User_Name = st.text_input("Name")
         User_Sex = st.selectbox('Gender', ('Male', 'Female'))
         User_Age = st.number_input("Age", step=1)
-        User_CREA = st.number_input("CREA level", step=0.1)
 
     with content_middle:
-        st.title('*Hepatits-C Prediction*')
+        st.header("")
+        st.header("")
         st.write("")
-        st.write("")
+        User_CREA = st.number_input("CREA level", step=0.1)
         User_ALB = st.number_input("ALB level", step=0.1)
         User_ALP = st.number_input("ALP level", step=0.1)
         User_ALT = st.number_input("ALT level", step=0.1)
@@ -77,8 +89,9 @@ def secondPage():
         submitted = st.button("Predict")
 
     with content_right:
+        st.header("")
+        st.header("")
         st.write("")
-        st.subheader("")
         User_BIL = st.number_input("BIL level", step=0.1)
         User_CHE = st.number_input("CHE level", step=0.1)
         User_CHOL = st.number_input("CHOL level", step=0.1)

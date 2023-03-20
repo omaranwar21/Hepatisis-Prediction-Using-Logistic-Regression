@@ -7,7 +7,7 @@ header.css-18ni7ap.e8zbici2{
 	/* margin-top: -7rem; */
 	background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(66, 66, 66, 0.486)), url('https://static.vecteezy.com/system/resources/previews/000/697/995/non_2x/human-liver-in-abstract-blue-poly-design-vector.jpg');
 	background-size: cover;
-	background-position: top left;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: local;
 
@@ -106,15 +106,27 @@ h2 {
     font-size: 3.25rem;
 	padding-left: 30%;
 }
-
+*/
 p, ol, ul, dl {
     margin: 0px 0px 1rem;
     padding: 0px;
-	padding-top: 21%;
+	padding-top: 5%;
     font-size: 1rem;
     font-weight: 400;
-} */
+} 
 .stRadio
 {
 	display: none;
 }
+.css-1avcm0n{
+	display: none !important;
+}
+
+.css-z5fcl4{
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* .css-5uatcg{
+	width: 100%;
+} */
