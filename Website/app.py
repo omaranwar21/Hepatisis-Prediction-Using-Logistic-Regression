@@ -39,8 +39,8 @@ def thirdPage():
             prediction = 'Unfortunately, you suffer from Hepatisis, see a doctor as soon as possible'
         st.header("Welcome "+ st.session_state.User_Name)
         st.header(prediction)
+        return 'Finish'
 
-    return 'Finish'
 
 def firstPage():
     
@@ -128,7 +128,14 @@ with content_left:
 with content_left:
     if title == '':
         pass
+    elif title == 'Finish':
+        pass
     else:
+        next = st.button(title)
+        st.session_state.next_clicked = st.session_state.next_clicked + 1
+
+with content_middle:
+    if title == 'Finish':
         next = st.button(title)
         st.session_state.next_clicked = st.session_state.next_clicked + 1
 
