@@ -36,6 +36,8 @@
 - CSS version : 3
 - Python version : 3.10.8
 - numpy version : 1.22.3
+- scikit_learn version: 1.0.2
+- 
 
 
 <hr>
