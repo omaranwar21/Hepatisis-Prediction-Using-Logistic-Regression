@@ -23,7 +23,7 @@
 - First page as we descripe the ML model, accuracy and senstivity.
 ![First_page](https://user-images.githubusercontent.com/81518078/226736861-3f3c6843-4c15-4700-b1bc-3562b138147c.jpg)
 
-- Second page as we ask some question to collect some information from the patient to predict the disease.
+- Second page as we ask some question to collect some information from the patient (like:name, age, ) to predict the disease.
 ![second_page](https://user-images.githubusercontent.com/81518078/226736976-ca7c3b4d-9899-48e2-a108-01ebe57f67ff.jpg)
 - Then Final page we show the prediction.
 ![third](https://user-images.githubusercontent.com/81518078/226737025-c2acad7d-3bc0-4028-a15c-8f0239b603fb.jpg)
