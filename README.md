@@ -4,7 +4,7 @@
 ## Table of contents
 * [Information](#information)
 * [Web App](#Web)
-* [Technologies](#technologies)
+* [Technologies](#Technologies)
 * [Setup](#setup)
 * [Team](#team)
 
@@ -30,7 +30,7 @@
 
 
 
-<hr>
+
 ## Technologies
 - Streamlit verion : 1.20.0
 - CSS version : 3
