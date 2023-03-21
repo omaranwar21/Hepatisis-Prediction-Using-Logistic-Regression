@@ -21,11 +21,11 @@
 
 ## Web 
 - First page as we descripe the ML model, accuracy and senstivity.
-![First Page](![Uploading First_page.jpg…])
+![First Page](Uploading First_page.jpg…)
 - Second page as we ask some question to collect some information from the patient to predict the disease.
-![Second Page](![[Uploading second_page.jpg…])
+![Second Page](Uploading second_page.jpg…)
 - Then Final page we show the prediction.
-![Third Page](![Uploading third.jpg…])
+![Third Page](Uploading third.jpg…)
 
 
 <hr>
