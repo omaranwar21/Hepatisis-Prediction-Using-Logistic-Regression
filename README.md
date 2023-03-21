@@ -41,6 +41,6 @@ $ pip install "required_modules"
 * [Sama Mostafa](https://github.com/SamaMostafa1) 
 
 
-<hr>
+
 
 
